@@ -75,3 +75,18 @@ body {
     padding: 20px;
     border-radius: 8px;
 }
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-left: 10px; /* 左侧整体向左移动 */
+}
+
+.nav li {
+    margin-left: 50px; /* 每个列表项向左移动 */
+}
+
+.nav {
+    margin-right: 20px; /* 为导航添加右边距，调整值以增加或减少距离 */
+}
