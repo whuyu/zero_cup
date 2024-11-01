@@ -79,14 +79,56 @@ body {
 .nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
-    padding-left: 10px; /* 左侧整体向左移动 */
+    margin-left: -10px; /* 整体向左微调 */
+    padding-left: 0; /* 清除任何默认 padding */
 }
 
 .nav li {
-    margin-left: 50px; /* 每个列表项向左移动 */
+    margin-right: 50px; /* 列表项之间的间隔 */
 }
 
-.nav {
-    margin-right: 20px; /* 为导航添加右边距，调整值以增加或减少距离 */
+
+
+.eco-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.eco-section .text {
+    flex: 1;
+    padding-right: 15px; /* 增加右边距，避免文字和图片过于贴近 */
+}
+
+.eco-section .text p {
+    font-size: 16px;
+    line-height: 2.8; /* 增加行间距，使文字更舒适 */
+    padding-right: 15px;
+}
+
+.eco-section .images {
+    display: flex; /* 使用 flexbox 布局 */
+    flex-direction: column; /* 纵向排列图片 */
+    gap: 10px; /* 图片间距 */
+    flex: 1; /* 允许容器占据父容器的剩余空间 */
+    align-items: center; /* 图片水平居中对齐 */
+}
+
+.eco-section .images img {
+    width: 100%; /* 图片宽度为其父容器的100% */
+    max-width: 300px; /* 设置最大宽度为300px，您可以根据需要调整此值 */
+    border-radius: 8px; /* 圆角效果 */
+    transition: transform 0.2s ease; /* 平滑的过渡效果 */
+}
+
+.eco-section .images img:hover {
+    transform: scale(1.05); /* 鼠标悬停时轻微放大 */
+}
+
+
+.highlight {
+    color: green;
+    font-weight: bold; /* 可选，使“生态文明”更加突出 */
 }
