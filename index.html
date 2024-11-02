@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>生态文明</title>
     <link rel="stylesheet" href="index.css">
+   
 </head>
 
 <body>
@@ -19,7 +20,6 @@
             <ul>
                 <li><a href="#1">理念概述</a></li>
                 <li><a href="#2">环保项目</a></li>
-                <li><a href="#3">生态保护案例</a></li>
                 <li><a href="#4">可持续发展目标</a></li>
                 <li><a href="#5">联系我们</a></li>
             </ul>
@@ -49,13 +49,15 @@
                 <a href="https://www.bilibili.com/video/BV1NS4y187Co/" target="_blank">
                     <img src="../image/image1_thumb1.jpg" alt="Image 1">
                 </a>
-                <a href="image2_large.jpg"><img src="image2_thumb.jpg" alt="Image 2"></a>
-                <a href="image3_large.jpg"><img src="image3_thumb.jpg" alt="Image 3"></a>
+                <a href="javascript:void(0);" onclick="showModal()">
+                    <img src="../image/image2_thumb.jpg" alt="Image 2" style="width:300px;">
+                </a>
+                <a href="https://zh.wikipedia.org/wiki/%E7%94%9F%E6%80%81%E6%96%87%E6%98%8E" target="_blank">
+                    <img src="../image/image3_thumb.jpg" alt="Image 3" style="width:300px;">
+                </a>
             </div>
         </div>
     </section>
-
-    
 
     <!-- Environmental Projects Section -->
     <section class="environmental-projects container" id="2">
@@ -79,16 +81,7 @@
         </div>
     </section>
 
-    <!-- Ecological Protection Cases Section -->
-    <section class="protection-cases container" id="3">
-        <h1 class="section-title">生态保护案例</h1>
-        <div class="case-content">
-            <img src="../image/ecological_reserve.jpg" alt="生态保护区">
-            <p>我国已建立多处生态保护区，通过恢复植被、管理人类活动，有效保护了稀有物种的栖息地...
-                <a href="protection_cases.html">了解更多</a>
-            </p>
-        </div>
-    </section>
+   
 
     <!-- Sustainable Development Goals Section -->
     <section class="sustainable-goals container" id="4">
@@ -106,11 +99,54 @@
     <section class="contact container" id="5">
         <div class="contact-content">
             <img src="../image/contact.jpg" alt="联系我们">
-            <p>如果您对生态保护、可持续发展有兴趣，欢迎联系我们，加入生态文明的推广行动。
+            <p>
+                如果您对生态保护、可持续发展有兴趣，欢迎联系我们，加入生态文明的推广行动。
                 <a href="contact.html">联系我们</a>
             </p>
         </div>
     </section>
+
+    <!-- Modal Section -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>生态文明</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>生态文明，是指人类遵循人、自然、社会和谐发展这一客观规律而取得的物质与精神成果的总和；是指人与自然、人与人、人与社会和谐共生、良性循环、全面发展、持续繁荣为基本宗旨的文化伦理形态。
+                    生态文明是人类文明的一种形态,它以尊重和维护自然为前提，以人与人、人与自然、人与社会和谐共生为宗旨，以建立可持续的生产方式和消费方式为内涵，以引导人们走上持续、和谐的发展道路为着眼点。生态文明强调人的自觉与自律，强调人与自然环境的相互依存、相互促进、共处共融，既追求人与生态的和谐，也追求人与人的和谐，而且人与人的和谐是人与自然和谐的前提。可以说，生态文明是人类对传统文明形态特别是工业文明进行深刻反思的成果，是人类文明形态和文明发展理念、道路和模式的重大进步。
+                    包括社会生态、政治生态，文学生态等。
+                    深度阐述
+                    所谓生态文明，是人类文明的一种形式。它以尊重和维护生态环境为主旨，以可持续发展为根据，以未来人类的继续发展为着眼点。
+                    这种文明观强调人的自觉与自律，强调人与自然环境的相互依存、相互促进、共处共融。这种文明观同以往的农业文明、工业文明具有相同点，那就是它们都主张在改造自然的过程中发展物质生产力，不断提高人的物质生活水平。但它们之间也有着明显的不同点，即生态文明突出生态的重要，强调尊重和保护环境，强调人类在改造自然的同时必须尊重和爱护自然，而不能随心所欲，盲目蛮干，为所欲为。
+                    很显然，生态文明同物质文明与精神文明既有联系又有区别。说它们有联系，是因为生态文明既包含物质文明的内容，又包含精神文明的内容：生态文明并不是要求人们消极地对待自然，在自然面前无所作为，而是在把握自然规律的基础上积极地能动地利用自然，改造自然，使之更好地为人类服务，在这一点上，它是与物质文明一致的。
+                    而生态文明所要求的人类要尊重和爱护自然，将人类的生活建设得更加美好；人类要自觉、自律，树立生态观念，约束自己的行动，在这一点上，它又是与精神文明相一致的，毋宁说它本身就是精神文明的重要组成部分。说它们有区别，则是指生态文明的内容无论是物质文明还是精神文明都不能完全包容，也就是说，生态文明具有相对的独立性。
+                    因为在生产力水平很低或比较低的情况下，人类对物质生活的追求总是占第一位的，所谓“物质中心”的观念也是很自然的。然而，随着生产力的巨大发展，人类物质生活水平的提高；特别是工业文明造成的环境污染，资源破坏，沙漠化，“城市病”等等全球性问题的产生和发展，人类越来越深刻地认识到，物质生活的提高是必要的，但不能忽视精神生活；发展生产力是必要的，但不能破坏生态；人类不能一味地向自然索取，而必须保护生态平衡。
+                    20世纪七八十年代，随着各种全球性问题的加剧以及“能源危机”的冲击，在世界范围内开始了关于“增长的极限”的讨论，各种环保运动逐渐兴起。正是在这种情况下，1972年6月，联合国在斯德哥尔摩召开了有史以来第一次“人类与环境会议”，讨论并通过了著名的《人类环境宣言》，从而揭开了全人类共同保护环境的序幕，也意味着环保运动由群众性活动上升到了政府行为。伴随着人们对公平（代际公平与代内公平）作为社会发展目标认识的加深以及对一系列全球性环境问题达成共识，可持续发展的思想随之形成。
+                    1983年11月，联合国成立了世界环境与发展委员会，1987年该委员会在其长篇报告《我们共同的未来》中，正式提出了可持续发展的模式。1992年联合国环境与发展大会通过的《21世纪议程》，更是高度凝结了当代人对可持续发展理论的认识。由此可知，生态文明的提出，是人们对可持续发展问题认识深化的必然结果。
+                    严酷的现实告诉我们，人与自然都是生态系统中不可或缺的重要组成部分。人与自然不存在统治与被统治、征服与被征服的关系，而是存在相互依存、和谐共处、共同促进的关系。人类的发展应该是人与社会、人与环境、当代人与后代人的协调发展。人类的发展不仅要讲究代内公平，而且要讲究代际之间的公平，亦即不能以当代人的利益为中心，甚至为了当代人的利益而不惜牺牲后代人的利益。而必须讲究生态文明，牢固树立起可持续发展的生态文明观。
+                </p>
+            </div>
+        
+        </div>
+    </div>
+
+    <script>
+        function showModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("myModal")) {
+                closeModal();
+            }
+        }
+    </script>
 
 </body>
 
