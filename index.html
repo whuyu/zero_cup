@@ -62,47 +62,68 @@
         <h1 class="section-title">环保项目</h1>
         <div class="projects-grid">
             <div class="project-card" onclick="showModal('project1')">
-                <img src="../image/project_planting_trees.jpg" alt="植树项目">
-                <h3>植树造林</h3>
-                <p>通过植树造林来恢复被破坏的森林，提高生态系统的碳汇功能。</p>
+                <img src="../image/mayi.jpg" alt="蚂蚁森林">
+                <h3>蚂蚁森林</h3>
+                <p>一项旨在带动公众低碳减排的公益项目</p>
             </div>
             <div class="project-card" onclick="showModal('project2')">
-                <img src="../image/project_water_conservation.jpg" alt="水资源保护">
-                <h3>水资源保护</h3>
-                <p>保护并改善水质，建立生态友好的水源地，保障可持续的水资源利用。</p>
+                <img src="../image/hour.jpg" alt="地球一小时">
+                <h3>地球一小时</h3>
+                <p>世界自然基金会（WWF）应对全球气候变化所提出的一项全球性节能活动。</p>
             </div>
             <div class="project-card" onclick="showModal('project3')">
-                <img src="../image/project_wildlife.jpg" alt="野生动物保护">
-                <h3>野生动物保护</h3>
-                <p>保护濒危野生动物，维护生物多样性，促进生态平衡。</p>
+                <img src="../image/travel.jpg" alt="低碳出行">
+                <h3>低碳出行</h3>
+                <p>一种降低“碳”的出行方式。</p>
             </div>
         </div>
     </section>
 
-    <!-- Modal Section -->
+   <!-- Modal Section -->
     <div id="projectModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
+           <div class="modal-header">
                 <h2 id="modalTitle"></h2>
                 <span class="close" onclick="closeModal()">&times;</span>
             </div>
             <div class="modal-body">
                 <p id="modalDescription"></p>
+                <a id="moreInfoLink" href="#" target="_blank" class="more-info-button">了解更多</a>
             </div>
         </div>
     </div>
 
-    <!-- Sustainable Development Goals Section -->
-    <section class="sustainable-goals container" id="4">
-        <h1 class="section-title">可持续发展目标</h1>
-        <div class="image-wrapper" align="center">
-            <img src="../image/sdgs.jpg" alt="可持续发展目标">
-        </div>
-        <p>
-            为了实现全人类的福祉与地球的可持续发展，联合国提出了17项可持续发展目标（SDGs），涵盖了消除贫困、优质教育、清洁能源和气候行动等多个方面...
-            <a href="sustainable_goals.html">了解更多</a>
-        </p>
-    </section>
+    
+    <h1>生态文明知识问答</h1>
+    <div id="questions-container"></div>
+
+    <script>
+        async function loadQuestions() {
+    try {
+        const response = await fetch('http://localhost:3000/api/questions');
+        const questions = await response.json();
+        console.log(questions);  // 输出到控制台，检查数据是否成功获取
+        const container = document.getElementById('questions-container');
+
+        questions.forEach((q) => {
+            const questionElem = document.createElement('div');
+            questionElem.innerHTML = `
+                <h3>${q.question}</h3>
+                <label><input type="radio" name="q${q.id}" value="A"> ${q.option_a}</label><br>
+                <label><input type="radio" name="q${q.id}" value="B"> ${q.option_b}</label><br>
+                <label><input type="radio" name="q${q.id}" value="C"> ${q.option_c}</label><br>
+                <label><input type="radio" name="q${q.id}" value="D"> ${q.option_d}</label><br>
+            `;
+            container.appendChild(questionElem);
+        });
+    } catch (error) {
+        console.error("Error loading questions:", error);
+    }
+}
+
+
+        loadQuestions();
+    </script>
 
     <!-- Contact Section -->
     <section class="contact container" id="5">

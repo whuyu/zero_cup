@@ -202,3 +202,17 @@ body {
     height: auto;
     border-radius: 8px;
 }
+
+.more-info-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4CAF50; /* 绿色背景 */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.more-info-button:hover {
+    background-color: #45a049; /* 鼠标悬停效果 */
+}
