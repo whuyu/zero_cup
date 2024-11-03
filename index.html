@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>生态文明</title>
     <link rel="stylesheet" href="index.css">
-   
 </head>
 
 <body>
@@ -33,7 +32,6 @@
         <div class="image-wrapper">
             <img src="../image/ecology_overview.jpg" alt="生态文明">
         </div>
-
         <div class="eco-section">
             <div class="text">
                 <p>
@@ -62,26 +60,37 @@
     <!-- Environmental Projects Section -->
     <section class="environmental-projects container" id="2">
         <h1 class="section-title">环保项目</h1>
-        <div class="box">
-            <img src="../image/project_planting_trees.jpg" alt="植树项目">
-            <p><a href="project_trees.html" class="link-title">植树造林</a></p>
-            <p>通过植树造林来恢复被破坏的森林，提高生态系统的碳汇功能。</p>
-        </div>
-
-        <div class="box">
-            <img src="../image/project_water_conservation.jpg" alt="水资源保护">
-            <p><a href="project_water.html" class="link-title">水资源保护</a></p>
-            <p>保护并改善水质，建立生态友好的水源地，保障可持续的水资源利用。</p>
-        </div>
-
-        <div class="box">
-            <img src="../image/project_wildlife.jpg" alt="野生动物保护">
-            <p><a href="project_wildlife.html" class="link-title">野生动物保护</a></p>
-            <p>保护濒危野生动物，维护生物多样性，促进生态平衡。</p>
+        <div class="projects-grid">
+            <div class="project-card" onclick="showModal('project1')">
+                <img src="../image/project_planting_trees.jpg" alt="植树项目">
+                <h3>植树造林</h3>
+                <p>通过植树造林来恢复被破坏的森林，提高生态系统的碳汇功能。</p>
+            </div>
+            <div class="project-card" onclick="showModal('project2')">
+                <img src="../image/project_water_conservation.jpg" alt="水资源保护">
+                <h3>水资源保护</h3>
+                <p>保护并改善水质，建立生态友好的水源地，保障可持续的水资源利用。</p>
+            </div>
+            <div class="project-card" onclick="showModal('project3')">
+                <img src="../image/project_wildlife.jpg" alt="野生动物保护">
+                <h3>野生动物保护</h3>
+                <p>保护濒危野生动物，维护生物多样性，促进生态平衡。</p>
+            </div>
         </div>
     </section>
 
-   
+    <!-- Modal Section -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
 
     <!-- Sustainable Development Goals Section -->
     <section class="sustainable-goals container" id="4">
@@ -128,26 +137,10 @@
                     严酷的现实告诉我们，人与自然都是生态系统中不可或缺的重要组成部分。人与自然不存在统治与被统治、征服与被征服的关系，而是存在相互依存、和谐共处、共同促进的关系。人类的发展应该是人与社会、人与环境、当代人与后代人的协调发展。人类的发展不仅要讲究代内公平，而且要讲究代际之间的公平，亦即不能以当代人的利益为中心，甚至为了当代人的利益而不惜牺牲后代人的利益。而必须讲究生态文明，牢固树立起可持续发展的生态文明观。
                 </p>
             </div>
-        
         </div>
     </div>
 
-    <script>
-        function showModal() {
-            document.getElementById("myModal").style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("myModal")) {
-                closeModal();
-            }
-        }
-    </script>
-
+    <script src="index.js"></script>
 </body>
 
 </html>

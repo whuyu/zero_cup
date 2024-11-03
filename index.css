@@ -176,3 +176,29 @@ body {
     margin-top: 10px; 
     line-height: 1.6; /* 适当的行间距 */
 }
+
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #e6f2ec;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
