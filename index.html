@@ -19,7 +19,7 @@
             <ul>
                 <li><a href="#1">理念概述</a></li>
                 <li><a href="#2">环保项目</a></li>
-                <li><a href="#4">可持续发展目标</a></li>
+                <li><a href="#3">生态文明知识问答</a></li>
                 <li><a href="#5">联系我们</a></li>
             </ul>
         </nav>
@@ -28,7 +28,6 @@
     <!-- Ecological Civilization Overview Section -->
     <section class="overview container" id="1">
         <h1 class="section-title">生态文明理念</h1>
-        <h2>人类与自然的和谐共生</h2>
         <div class="image-wrapper">
             <img src="../image/ecology_overview.jpg" alt="生态文明">
         </div>
@@ -93,37 +92,85 @@
         </div>
     </div>
 
-    
-    <h1>生态文明知识问答</h1>
+
+
+
+    <!-- Ecological Civilization Quiz Section -->
+    <section class="Ecological Civilization Quiz" id="3">
+    <h1 class="section-title">生态文明知识问答</h1>
     <div id="questions-container"></div>
+    <button class="next-button" onclick="nextQuestion()">下一题</button>
+</section>
 
-    <script>
-        async function loadQuestions() {
-    try {
-        const response = await fetch('http://localhost:3000/api/questions');
-        const questions = await response.json();
-        console.log(questions);  // 输出到控制台，检查数据是否成功获取
-        const container = document.getElementById('questions-container');
+<script>
+    let currentQuestionIndex = 0;
+    let score = 0;
 
-        questions.forEach((q) => {
-            const questionElem = document.createElement('div');
-            questionElem.innerHTML = `
-                <h3>${q.question}</h3>
-                <label><input type="radio" name="q${q.id}" value="A"> ${q.option_a}</label><br>
-                <label><input type="radio" name="q${q.id}" value="B"> ${q.option_b}</label><br>
-                <label><input type="radio" name="q${q.id}" value="C"> ${q.option_c}</label><br>
-                <label><input type="radio" name="q${q.id}" value="D"> ${q.option_d}</label><br>
-            `;
-            container.appendChild(questionElem);
-        });
-    } catch (error) {
-        console.error("Error loading questions:", error);
+    async function loadQuestions() {
+        try {
+            const response = await fetch('http://localhost:3000/api/questions');
+            const questions = await response.json();
+            window.questions = questions; // 全局存储问题
+            displayQuestion(currentQuestionIndex); // 显示第一个问题
+        } catch (error) {
+            console.error("Error loading questions:", error);
+        }
     }
-}
 
+    function displayQuestion(index) {
+        const container = document.getElementById('questions-container');
+        container.innerHTML = ''; // 清除之前的内容，确保只显示一个问题
 
-        loadQuestions();
-    </script>
+        const question = window.questions[index];
+        const questionElem = document.createElement('div');
+        questionElem.classList.add('question');
+        questionElem.innerHTML = `
+            <h3>${question.question}</h3>
+            <div class="options">
+                <label><input type="radio" name="q${question.id}" value="A"><span> ${question.option_a}</span></label>
+                <label><input type="radio" name="q${question.id}" value="B"><span> ${question.option_b}</span></label>
+                <label><input type="radio" name="q${question.id}" value="C"><span> ${question.option_c}</span></label>
+                <label><input type="radio" name="q${question.id}" value="D"><span> ${question.option_d}</span></label>
+            </div>
+        `;
+        container.appendChild(questionElem);
+    }
+
+    function nextQuestion() {
+        // 获取用户选择的答案
+        const selectedOption = document.querySelector(`input[name="q${window.questions[currentQuestionIndex].id}"]:checked`);
+        
+        if (selectedOption) {
+            // 检查答案是否正确
+            if (selectedOption.value === window.questions[currentQuestionIndex].correct_option) {
+                score++;
+            }
+
+            // 移动到下一个问题
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < window.questions.length) {
+                // 显示下一个问题
+                displayQuestion(currentQuestionIndex);
+            } else {
+                // 如果没有更多问题，显示最终得分
+                alert(`您答对了 ${score} 个问题，共 ${window.questions.length} 个问题。`);
+                // 重置测验
+                currentQuestionIndex = 0;
+                score = 0;
+                loadQuestions(); // 从头开始测验
+            }
+        } else {
+            alert("请选择一个答案才能继续！");
+        }
+    }
+
+    loadQuestions();
+</script>
+
+    
+    
+    
 
     <!-- Contact Section -->
     <section class="contact container" id="5">
