@@ -93,14 +93,13 @@
     </div>
 
 
-
-
     <!-- Ecological Civilization Quiz Section -->
     <section class="Ecological Civilization Quiz" id="3">
     <h1 class="section-title">生态文明知识问答</h1>
+    <div id="progress-container" class="progress-container"></div>
     <div id="questions-container"></div>
     <button class="next-button" onclick="nextQuestion()">下一题</button>
-</section>
+    </section>
 
 <script>
     let currentQuestionIndex = 0;
@@ -137,51 +136,85 @@
     }
 
     function nextQuestion() {
-        // 获取用户选择的答案
-        const selectedOption = document.querySelector(`input[name="q${window.questions[currentQuestionIndex].id}"]:checked`);
-        
-        if (selectedOption) {
-            // 检查答案是否正确
-            if (selectedOption.value === window.questions[currentQuestionIndex].correct_option) {
-                score++;
-            }
-
-            // 移动到下一个问题
-            currentQuestionIndex++;
-
-            if (currentQuestionIndex < window.questions.length) {
-                // 显示下一个问题
-                displayQuestion(currentQuestionIndex);
-            } else {
-                // 如果没有更多问题，显示最终得分
-                alert(`您答对了 ${score} 个问题，共 ${window.questions.length} 个问题。`);
-                // 重置测验
-                currentQuestionIndex = 0;
-                score = 0;
-                loadQuestions(); // 从头开始测验
-            }
-        } else {
-            alert("请选择一个答案才能继续！");
+    const selectedOption = document.querySelector(`input[name="q${window.questions[currentQuestionIndex].id}"]:checked`);
+    
+    if (selectedOption) {
+        if (selectedOption.value === window.questions[currentQuestionIndex].correct_option) {
+            score++;
+            addProgressIcon();  // 添加进度图标
         }
+
+        currentQuestionIndex++;
+
+        if (currentQuestionIndex < window.questions.length) {
+            displayQuestion(currentQuestionIndex);
+        } else {
+            showCompletionMessage();
+        }
+    } else {
+        alert("请选择一个答案才能继续！");
     }
+}
+
+// 添加进度图标的函数
+function addProgressIcon() {
+    const progressContainer = document.getElementById('progress-container');
+    const icon = document.createElement('img');
+    icon.src = "../image/tree_icon.png";  // 替换为你的小树苗图标路径
+    icon.classList.add('progress-icon');
+    progressContainer.appendChild(icon);
+}
 
     loadQuestions();
 </script>
 
-    
-    
+<!-- 成就模态窗口 -->
+<div id="completionModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>成就达成！</h2>
+            <span class="close" onclick="closeCompletionModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p id="completionMessage"></p>
+            <p class="eco-quote"></p>
+            <button class="next-button" onclick="closeCompletionModal()">再来一次</button>
+        </div>
+    </div>
+</div>
     
 
+
     <!-- Contact Section -->
-    <section class="contact container" id="5">
-        <div class="contact-content">
+<section class="contact container" id="5">
+    <h1 class="section-title">联系我们</h1>
+    <div class="contact-content">
+        <div class="contact-image">
             <img src="../image/contact.jpg" alt="联系我们">
-            <p>
-                如果您对生态保护、可持续发展有兴趣，欢迎联系我们，加入生态文明的推广行动。
-                <a href="contact.html">联系我们</a>
-            </p>
         </div>
-    </section>
+        <div class="contact-text">
+            <p>如果您对生态保护、可持续发展有兴趣，欢迎联系我们，加入生态文明的推广行动。</p>
+            <!-- 联系我们按钮 -->
+            <a href="javascript:void(0);" onclick="openContactModal()" class="contact-button">联系我们</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- QQ 联系方式模态窗口 -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>联系我们</h2>
+            <span class="close" onclick="closeContactModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>您可以通过以下 QQ 联系我们：</p>
+            <p><strong>QQ号码：123456789</strong></p>
+        </div>
+    </div>
+</div>
+
 
     <!-- Modal Section -->
     <div id="myModal" class="modal">

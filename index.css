@@ -10,6 +10,8 @@ body {
     background-color: #f0f8f5;
 }
 
+
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -314,6 +316,10 @@ body {
     border-color: #2b6d4a;
 }
 
+.question h3 {
+    color: #2b6d4a; /* 绿色，符合生态主题 */
+}
+
 .submit-button {
     display: block;
     width: 100%;
@@ -330,4 +336,92 @@ body {
 
 .submit-button:hover {
     background-color: #45a049;
+}
+
+/* 进度容器样式 */
+#progress-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.progress-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#completionModal .modal-content {
+    text-align: center;
+}
+
+#completionModal .modal-body {
+    margin-top: 10px;
+}
+
+#completionModal .modal-body p {
+    margin-bottom: 15px;
+}
+
+#completionModal .next-button {
+    margin-top: 10px;
+}
+
+.eco-quote {
+    font-style: italic;
+    color: #2b6d4a;
+    margin-top: 15px;
+}
+
+.contact-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #e6f2ec;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-image img {
+    width: 50%;
+    max-width: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-image img:hover {
+    transform: scale(1.05);
+}
+
+.contact-text {
+    flex: 1;
+    color: #2b6d4a; /* 文字颜色为深绿色 */
+    background-color: #e6f2ec; /* 背景色为浅绿色 */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.contact-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+section {
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
