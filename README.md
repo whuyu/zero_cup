@@ -36,7 +36,6 @@
 ### 1. 克隆项目
 
 git clone [https://github.com/whuyu/zero_cup]
-cd project-root
 
 ### 2. 安装
 下载并安装node.js
@@ -73,7 +72,7 @@ cd project-root
    - 用户完成答题并查看成就称号后，可以点击“再来一次”按钮关闭成就模态窗口。
    - 系统会重置答题进度和得分，用户可以再次参与答题，从头开始新一轮问答。
 
-
+---
 ## 数据库结构
 项目使用 SQLite 数据库来存储问答题目，数据库文件为 `database.db`，包含一个 `questions` 表。
 - **字段**：
