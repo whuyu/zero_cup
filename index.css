@@ -12,6 +12,43 @@ body {
 
 
 
+
+/* 针对大屏幕的布局 */
+@media (min-width: 1200px) {
+    .container {
+        width: 80%;
+    }
+}
+
+/* 针对中等屏幕的布局 */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* 针对小屏幕的布局 */
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .header, .nav, .eco-section, .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* 单列布局 */
+    }
+
+    .contact-image img {
+        width: 80%; /* 缩小图片以适应小屏 */
+    }
+}
+
+
 .container {
     width: 90%;
     max-width: 1200px;
